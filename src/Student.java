@@ -27,7 +27,7 @@ public class Student {
     }
 
     /**
-     * Vaidates the argument and sets the instance variable
+     * Validates the argument and sets the instance variable
      * @param fName Single string
      */
     public void setFName(String fName) {
@@ -37,7 +37,7 @@ public class Student {
         if (validFName.contains(fName))
             this.fName = fName;
         else
-            throw new IllegalArgumentException(fName + "First name recived was not on the approved list");
+            throw new IllegalArgumentException(fName + "First name received was not on the approved list");
     }
 
     public String getLName() {
