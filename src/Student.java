@@ -28,7 +28,7 @@ public class Student {
 
     /**
      * Validates the argument and sets the instance variable
-     * @param fName Single string
+     * @param fName "Michael"
      */
     public void setFName(String fName) {
         List<String> validFName = Arrays.asList("Michael");
@@ -37,15 +37,25 @@ public class Student {
         if (validFName.contains(fName))
             this.fName = fName;
         else
-            throw new IllegalArgumentException(fName + "First name received was not on the approved list");
+            throw new IllegalArgumentException(fName + "was not on the approved list");
     }
 
     public String getLName() {
         return lName;
     }
 
+    /**
+     * Validates the argument and sets the instance variable
+     * @param lName "Wilks"
+     */
     public void setLName(String lName) {
-        this.lName = lName;
+        List<String> validLName = Arrays.asList("Wilks");
+
+        //test if the argument is valid
+        if (validLName.contains(lName))
+            this.lName = lName;
+        else
+            throw new IllegalArgumentException(lName + "was not on the approved list");
     }
 
     public Number getStudentNum() {
@@ -53,7 +63,10 @@ public class Student {
     }
 
     public void setStudentNum(Number studentNum) {
-        this.studentNum = studentNum;
+        if (String.valueOf(studentNum).length() == 7)
+            this.studentNum = studentNum;
+        else
+            throw new IllegalArgumentException("Student Number must be Seven digits");
     }
 
     public String getActiveList() {
